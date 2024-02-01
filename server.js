@@ -37,7 +37,15 @@ app.get('/register', (req, res) => {
 app.get('/dashboard', async (req, res) => {
     try {
         const client = await pool.connect();
-        const result = await client.query('SELECT * FROM your_table_name');
+        const result = await client.query('SELECT
+    students.student_name,
+    supervisors.supervisor_name,
+    supervisors.supervisor_email,
+    students.allocation_date
+FROM
+    students
+JOIN
+    supervisors ON students.supervisor_id = supervisors.supervisor_id;');
         const rows = result.rows;
         client.release();
         res.render('dashboard', { rows });

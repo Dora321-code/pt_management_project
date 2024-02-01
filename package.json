@@ -1,0 +1,25 @@
+{
+  "name": "pt_management_project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Isdora_Manga",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "pg-promise": "^11.5.4",
+    "postgresql": "^0.0.1",
+    "pug": "^3.0.2"
+  },
+  "description": "\"system to provide student PT allocation\",",
+  "repository": {
+    "type": "git",
+    "url": "Owner avatar"
+  }
+}

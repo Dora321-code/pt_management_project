@@ -1,0 +1,14 @@
+extends layout
+
+block body
+  div
+    img(src='ning nodejs/pt_management_project/public/images/logo.jpeg', alt='Logo', style='max-width: 100%; height: auto;')
+    h2 PT management system
+    p Welcome you can view your PT allocation here.
+    p
+      | Don't have an account?
+    a(href='{% url "register" %}', style='color: #008000;') Register here.
+    p
+      | Already have an account?
+    a(href='{% url "login" %}', style='color: #008000;') Login here.
+

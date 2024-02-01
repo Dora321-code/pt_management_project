@@ -1,0 +1,31 @@
+extends layout
+block content
+  | {% if user.is_authenticated %}
+  h2 Welcome, {{ user.username }}!
+  //  To Display Allocation Information
+  h3 Your Supervisor Allocation:
+  |         {% if allocation %}
+  p Supervisor Name: {{ allocation.supervisor.name }}
+  p Supervisor Email: {{ allocation.supervisor.email }}
+  p Allocation Date: {{ allocation.allocation_date }}
+  |         {% else %}
+  p You have not been allocated a supervisor yet.
+  |         {% endif %}
+  
+  | {% else %}
+  // Student Login Form
+  h2 Login
+  form(method='post' action="{% url 'login' %}")
+    | {% csrf_token %}
+    label(for='username') Username:
+    input(type='text' name='username' required='')
+    br
+    label(for='password') Password:
+    input(type='password' name='password' required='')
+    br
+    input(type='submit' value='Login')
+  p
+    | Don&apos;t have an account?
+    a(href="{% url 'register' %}" style='color: #008000;') Register here
+    | .
+  |     {% endif %}

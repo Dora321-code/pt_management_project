@@ -1,0 +1,23 @@
+extends layout
+block content
+div
+  h2 Registration
+  form(method='post' action="{% url 'register' %}")
+    | {% csrf_token %}
+    label(for='username') Username:
+    input(type='text' name='username' required='')
+    br
+    label(for='email') Email:
+    input(type='email' name='email' required='')
+    br
+    label(for='password1') Password:
+    input(type='password' name='password1' required='')
+    br
+    label(for='password2') Confirm Password:
+    input(type='password' name='password2' required='')
+    br
+    input(type='submit' value='Register')
+  p
+    | Already have an account?
+    a(href="{% url 'login' %}" style='color: #008000;') Login here
+    | .

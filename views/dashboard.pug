@@ -1,0 +1,20 @@
+extends layout
+block content
+div
+  h2 Student Dashboard
+ 
+  h3 Your Supervisor Allocations:
+  table
+    thead
+      tr
+        th Supervisor Name
+        th Supervisor Email
+        th Allocation Date
+    tbody
+      | {% for allocation in allocations %}
+      tr
+        td {{ allocation.supervisor.name }}
+        td {{ allocation.supervisor.email }}
+        td {{ allocation.allocation_date }}
+      |             {% endfor %}
+

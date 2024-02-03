@@ -1,9 +1,10 @@
 extends layout
+
 block content
 div
   h2 Registration
-  form(method='post' action="{% url 'register' %}")
-    | {% csrf_token %}
+  form(method='post' action='/register')
+  
     label(for='username') Username:
     input(type='text' name='username' required='')
     br
@@ -19,5 +20,5 @@ div
     input(type='submit' value='Register')
   p
     | Already have an account?
-    a(href="{% url 'login' %}" style='color: #008000;') Login here
+    a(href='/login') Login here
     | .

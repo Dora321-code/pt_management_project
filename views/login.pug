@@ -15,7 +15,7 @@ block content
   | {% else %}
   // Student Login Form
   h2 Login
-  form(method='post' action="{% url 'login' %}")
+  form(method='post' action='/login')
     | {% csrf_token %}
     label(for='username') Username:
     input(type='text' name='username' required='')
@@ -25,7 +25,7 @@ block content
     br
     input(type='submit' value='Login')
   p
-    | Don&apos;t have an account?
-    a(href="{% url 'register' %}" style='color: #008000;') Register here
+    | Don't have an account?
+    a(href='/register', style='color: #008000;') Register here
     | .
   |     {% endif %}
